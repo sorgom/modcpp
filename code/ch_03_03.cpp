@@ -4,6 +4,9 @@
 
 #include "coding.h"
 
+#include <vector>
+#include <utility>
+
 class A {
 public:
     const int *pointer;
@@ -40,6 +43,7 @@ public:
         ;
         if (pointer != nullptr)
             cout << "val : " << *pointer << endl;
+        cout << endl;
     }
 };
 
@@ -52,10 +56,48 @@ A return_rvalue(bool test)
     else return b; // equal to static_cast<A&&>(b);
 }
 
+void reference(int& v) {
+    cout << "lvalue reference" << endl;
+}
+void reference(int&& v)
+{
+    cout << "rvalue reference" << endl;
+}
+
+template <typename T>
+void pass(T&& v) 
+{
+    cout << "          normal param passing: ";
+    reference(v);
+    cout << "       std::move param passing: ";
+    reference(std::move(v));
+    cout << "    std::forward param passing: ";
+    reference(std::forward<T>(v));
+    cout << "static_cast<T&&> param passing: ";
+    reference(static_cast<T&&>(v));
+}
+
+
 void ch_03_03()
 {
     chap(3.3);
     A obj = return_rvalue(false);
     cout << "obj" << endl;
     obj.show();
+
+    std::vector<A> v;
+
+    cout << "pushback" << endl;
+    v.push_back(obj);
+
+    cout << "pushback move" << endl;
+    v.push_back(std::move(obj));
+
+
+    std::cout << "rvalue pass:" << std::endl;
+    pass(1);
+
+    std::cout << "lvalue pass:" << std::endl;
+    int l = 1;
+    pass(l);
 }

@@ -18,5 +18,5 @@ void showcont(const auto& v)
 
 void chap(const auto& nr)
 {
-    cout << "### chapter " << nr << endl;
+    cout << endl << "### chapter " << nr << endl;
 }
