@@ -7,6 +7,10 @@ void ch_03_03();
 void ch_04_02();
 void ch_05_02();
 void ch_06_02();
+void ch_07_04();
+
+void ch_99_01();
+
 
 int main()
 {
@@ -22,6 +26,10 @@ int main()
     ch_05_02();
 
     ch_06_02();
+    
+    ch_07_04();
+    
+    ch_99_01();
     
     return 0;
 }

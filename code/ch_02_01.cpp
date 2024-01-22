@@ -28,7 +28,7 @@ constexpr int fibonacci2(const int n) {
 
 void ch_02_01()
 {
-    cout << "chapter 2.1" << endl;
+    chap(2.1);
     if (std::is_same<decltype(NULL), decltype(0)>::value)
     cout << "NULL == 0" << endl;
     if (std::is_same<decltype(NULL), decltype((void*)0)>::value)

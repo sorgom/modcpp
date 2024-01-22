@@ -15,6 +15,7 @@ workspace 'cpp'
 
 --    buildoptions { '-std=c++2a -pedantic-errors -fconcepts' }
     buildoptions { '-std=c++17 -pedantic-errors -fconcepts' }
+    linkoptions { '-pthread' }
 
     project 'cpp'
         kind        'ConsoleApp'
@@ -26,4 +27,3 @@ workspace 'cpp'
 
         defines { 'NDEBUG' }
         optimize 'On'
-
