@@ -9,7 +9,10 @@ void ch_05_02();
 void ch_06_02();
 void ch_07_04();
 
-void ch_99_01();
+// void ch_99_01();
+void test();
+
+void perform_copy_move();
 
 
 int main()
@@ -29,7 +32,10 @@ int main()
     
     ch_07_04();
     
-    ch_99_01();
+    // ch_99_01();
+    test();
+
+    perform_copy_move();
     
     return 0;
 }

@@ -7,8 +7,8 @@
 using std::cout;
 using std::endl;
 
-
-void showcont(const auto& v)
+template <typename T>
+void showcont(const T& v)
 {
     for (const auto& it : v)
     {
@@ -16,7 +16,7 @@ void showcont(const auto& v)
     }
 }
 
-void chap(const auto& nr)
+inline void chap(const float nr)
 {
     cout << endl << "### chapter " << nr << endl;
 }

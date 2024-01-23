@@ -36,3 +36,7 @@
 Makefile
 bin
 obj
+.vs
+*.sln
+*.vcxproj
+*.vcxproj.user
