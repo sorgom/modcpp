@@ -14,7 +14,11 @@ workspace 'cpp'
     objdir      'obj/%{prj.name}'
 
 --    buildoptions { '-std=c++2a -pedantic-errors -fconcepts' }
-    buildoptions { '-std=c++17 -pedantic-errors -fconcepts' }
+    filter { "action:gmake2" }
+        buildoptions { '-std=c++17 -pedantic-errors -fconcepts' }
+    filter { "action:vs*" }
+        buildoptions { '/std:c++17' }
+        
     linkoptions { '-pthread' }
 
     project 'cpp'

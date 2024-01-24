@@ -24,7 +24,7 @@ void ch_07_04()
     bool notified = false; // notification sign
     auto producer = [&]()
     {
-        for (int i = 0; ; ++i)
+        for (int i = 0; i < 20; ++i)
         {
             std::this_thread::sleep_for(std::chrono::milliseconds(500));
             std::unique_lock<std::mutex> lock(mtx);
@@ -51,7 +51,8 @@ void ch_07_04()
             lock.lock();
             if (!produced_nums.empty())
             {
-                cout << "- " << produced_nums.front() << endl;
+                const auto i = produced_nums.front();
+                cout << "- " << i << endl;
                 produced_nums.pop();
             }
             notified = false;
