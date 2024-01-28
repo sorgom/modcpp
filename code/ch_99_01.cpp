@@ -28,16 +28,16 @@ void test()
     std::cout << "sizeof(Buffer): " << sizeof(Buffer) << std::endl;
 }
 
-// void ch_99_01()
-// {
-//     chap(99.1);
-//     Buffer b;
-//     cout 
-//         << "max size: " << sm << endl
-//         << "S2  size: " << sizeof(S2) << endl
-//         << "S3  size: " << sizeof(S3) << endl
-//         << "double  : " << sizeof(double) << endl
-//         << "Buffer 1: " << sizeof(Buffer) << endl
-//         << "Buffer 2: " << sizeof(b) << endl
-//     ;
-// }
+void ch_99_01()
+{
+    chap(99.1);
+    Buffer bf;
+    cout 
+        << "S2  size: " << sizeof(S2) << endl
+        << "S3  size: " << sizeof(S3) << endl
+        << "double  : " << sizeof(double) << endl
+        << "Buffer 1: " << sizeof(Buffer) << endl
+        << "Buffer 2: " << sizeof(bf) << endl
+    ;
+
+}

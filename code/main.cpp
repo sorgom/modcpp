@@ -9,14 +9,20 @@ void ch_05_02();
 void ch_06_02();
 void ch_07_04();
 
-// void ch_99_01();
-void test();
+void ch_99_01();
 
 void perform_copy_move();
 
+void cpp_standard();
+void test_swap();
 
 int main()
 {
+    cpp_standard();
+    test_swap();
+    ch_99_01();
+    return 0;
+
     ch_02_01();
     ch_02_02();
     ch_02_03();
@@ -32,8 +38,6 @@ int main()
     
     ch_07_04();
     
-    // ch_99_01();
-    test();
 
     perform_copy_move();
     

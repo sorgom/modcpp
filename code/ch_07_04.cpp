@@ -15,13 +15,14 @@ void ch_07_04()
 {
     chap(7.4);
 
-    return;
+    // return;
 
     std::queue<int> produced_nums;
     std::mutex mtx;
     std::condition_variable cv;
     
     bool notified = false; // notification sign
+    bool goon = true;
     auto producer = [&]()
     {
         for (int i = 0; i < 20; ++i)
@@ -33,10 +34,11 @@ void ch_07_04()
             notified = true;
             cv.notify_all();
         }
+        goon = false;
     };
     auto consumer = [&]() 
     {
-        while (true)
+        while (goon)
         {
             std::unique_lock<std::mutex> lock(mtx);
             while (!notified)

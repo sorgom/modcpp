@@ -1,11 +1,9 @@
 --  ============================================================
---  Makefile build rules for premake5:
+--  Makefile / solution build rules for premake5
 --  ============================================================
-
 
 --  ============================================================
 --  > cpp.make
---  module tests and system tests at once runtime
 --  ->  bin/cpp
 --  ============================================================
 workspace 'cpp'
@@ -13,13 +11,16 @@ workspace 'cpp'
     language    'C++'
     objdir      'obj/%{prj.name}'
 
---    buildoptions { '-std=c++2a -pedantic-errors -fconcepts' }
+    includedirs { '../code', '../../DSTW/specification' }
+
     filter { "action:gmake2" }
-        buildoptions { '-std=c++17 -pedantic-errors -fconcepts' }
+        buildoptions { '-std=c++2a -pedantic-errors' }
+        -- buildoptions { '-std=c++17 -pedantic-errors' }
+        linkoptions { '-pthread' }
+
     filter { "action:vs*" }
         buildoptions { '/std:c++17' }
         
-    linkoptions { '-pthread' }
 
     project 'cpp'
         kind        'ConsoleApp'

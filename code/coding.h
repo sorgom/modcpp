@@ -16,7 +16,8 @@ void showcont(const T& v)
     }
 }
 
-inline void chap(const float nr)
+template <typename T>
+void chap(const T nr)
 {
     cout << endl << "### chapter " << nr << endl;
 }
