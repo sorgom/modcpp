@@ -15,13 +15,18 @@ void perform_copy_move();
 
 void cpp_standard();
 void test_swap();
-
+void test_MemStream();
+void test_multiple_assignment();
 int main()
 {
+    test_multiple_assignment();
+    return 0;
+    test_MemStream();
+
+
     cpp_standard();
     test_swap();
     ch_99_01();
-    return 0;
 
     ch_02_01();
     ch_02_02();
